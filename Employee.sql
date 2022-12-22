@@ -33,3 +33,29 @@ select * from Employee where Ename like 'N%a';
 #missing letter
 select * from Employee where Eaddr like 'Pu_e';
 select * from Employee where Edept like 'M_R';
+select id,Ename,Ephone,Eaddr from Employee;
+select * from Employee where id =5;
+select * from Employee where Ename='Nisha';
+#Distinct (separate)
+select distinct id from Employee;
+alter table Employee add Comm_pact int after Esalary;
+update Employee set Comm_pact = 20 where id = 1;
+update Employee set Comm_pact = 15 where id = 2;
+update Employee set Comm_pact = 10 where id = 3;
+update Employee set Comm_pact = 15 where id = 4;
+update Employee set Comm_pact = 25 where id = 5;
+#as (add)
+select Ename,Esalary,Esalary + 300 as 'Increased_Salary' from Employee;
+select Ename,Esalary,Esalary,Comm_pact + 100 as 'Annual_Compensation' from Employee;
+select Comm_pact from Employee;
+#greater than
+select id,Esalary from Employee where Esalary>1500;
+#between
+select Ename, Esalary from Employee where Esalary between 2000 and 5000;
+select * from Employee Where  Esalary = 10000.5 or Esalary = 20000.5 or Esalary = 35000.50;
+select * from Employee where id = 1 or id =5 or id = 3;
+# not equal
+select * from Employee where Esalary != 15000.8;
+select * from Employee where Ename ='Shifa';
+update Employee set id = 9 and Esalary<15000;
+select Ename, id from Employee where Esalary>15000 and Eaddr ='Kolkata';
